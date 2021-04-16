@@ -17,6 +17,8 @@ If you want it to be available as a global variable (like an old-school script t
 
 The Python version is about 4x faster, which is to be expected given that Pyodide is running the Python runtime within WebAssembly. I'm guessing the performance gap will be smaller once we get [wasm-gc](https://github.com/WebAssembly/gc).
 
+The actual `ftfy` code package is quite small (tens of KB), but Pyodide is several MB, so it's not going to be useful to you if you need something light-weight. If you are importing multiple Pyodide-based packages, you'd want to only import the Pyodide code once, and then load the `.whl` files after that.
+
 It doesn't run yet in Deno due to `pyodide.js` assuming that the runtime is either browser or web worker, but it should only take a few code changes (e.g. [here](https://github.com/pyodide/pyodide/blob/093c0dd18ddcefa4cc1bce5f404f4cec2444ef9d/src/pyodide.js#L58-L73)) to get it working. I personally don't need Deno support right now, so I'm going to instead wait and hope that `pyodide.js` moves to ES modules, and then I can just bump the version and get Deno support for free.
 
 `ftfy` was created by Robyn Speer at [Luminoso Technologies, Inc.](LuminosoInsight) and is MIT licensed. It depends upon [wcwidth](https://github.com/jquast/wcwidth) (by [Jeff Quast](https://github.com/jquast)) which is also MIT licensed. [Pyodide](https://github.com/pyodide/pyodide) is licensed under [Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/). **All credit for this module goes to Robyn Speer, Jeff Quast and the Pyodide contributors** - I just wrote a few lines of code to wrap it into a JS module.
