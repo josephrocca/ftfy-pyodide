@@ -139,3 +139,7 @@ Permission to use, copy, modify, and distribute this software
 for any purpose and without fee is hereby granted. The author
 disclaims all warranties with regard to this software.
 ```
+
+As previously mentioned, Pyodide is [licensed under Mozilla Public License 2.0](https://github.com/pyodide/pyodide/blob/master/LICENSE).
+
+All other code in this repo is licensed under the MIT License.
