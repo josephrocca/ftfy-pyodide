@@ -1,8 +1,8 @@
 
 // yolo:
-let pyodideText = await fetch("https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js").then(r => r.text());
+let pyodideText = await fetch("https://cdn.jsdelivr.net/pyodide/dev/full/pyodide.js").then(r => r.text());
 eval(pyodideText);
-await loadPyodide({indexURL : "https://cdn.jsdelivr.net/pyodide/v0.16.1/full/"});
+await loadPyodide({indexURL : "https://cdn.jsdelivr.net/pyodide/dev/full/"});
 
 await pyodide.runPythonAsync(`
   import micropip
