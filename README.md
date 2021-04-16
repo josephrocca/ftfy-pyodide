@@ -1,4 +1,4 @@
-A quick JavaScript "port" of [Python's ftfy module](https://pypi.org/project/ftfy/) using [Pyodide](https://github.com/pyodide/pyodide). It fixes text encoding issues (mojibake). Use it like this:
+A quick JavaScript "port" of [Python's ftfy module](https://pypi.org/project/ftfy/) using [Pyodide](https://github.com/pyodide/pyodide). It fixes text encoding issues (mojibake). You can use it like this:
 
 ```html
 <script type=module>
@@ -15,13 +15,13 @@ If you want it to be available as a global variable (like an old-school script t
 </script>
 ```
 
-The Python version is about 4x faster, which is to be expected given that Pyodide is running the Python runtime within WebAssembly. I'm guessing the performance gap will close once we get [wasm-gc](https://github.com/WebAssembly/gc).
+The Python version is about 4x faster, which is to be expected given that Pyodide is running the Python runtime within WebAssembly. I'm guessing the performance gap will be smaller once we get [wasm-gc](https://github.com/WebAssembly/gc).
 
 It doesn't run yet in Deno due to `pyodide.js` assuming that the runtime is either browser or web worker, but it should only take a few code changes (e.g. [here](https://github.com/pyodide/pyodide/blob/093c0dd18ddcefa4cc1bce5f404f4cec2444ef9d/src/pyodide.js#L58-L73)) to get it working. I personally don't need Deno support right now, so I'm going to instead wait and hope that `pyodide.js` moves to ES modules, and then I can just bump the version and get Deno support for free.
 
-`ftfy` was created by Robyn Speer at [Luminoso Technologies, Inc.](LuminosoInsight) and is MIT licensed. It depends upon [wcwidth](https://github.com/jquast/wcwidth) (by [Jeff Quast](https://github.com/jquast)) which is also MIT licensed. [Pyodide](https://github.com/pyodide/pyodide) is licensed under [Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/). **All credit for this module goes to Robyn Speer and the Pyodide contributors** - I just wrote a few lines of code to wrap it into a JS module.
+`ftfy` was created by Robyn Speer at [Luminoso Technologies, Inc.](LuminosoInsight) and is MIT licensed. It depends upon [wcwidth](https://github.com/jquast/wcwidth) (by [Jeff Quast](https://github.com/jquast)) which is also MIT licensed. [Pyodide](https://github.com/pyodide/pyodide) is licensed under [Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/). **All credit for this module goes to Robyn Speer, Jeff Quast and the Pyodide contributors** - I just wrote a few lines of code to wrap it into a JS module.
 
-## As stated by the ftfy docs:
+## As stated by the `ftfy` docs:
 
 ftfy can fix mojibake (encoding mix-ups), by detecting patterns of characters that were clearly meant to be UTF-8 but were decoded as something else:
 
