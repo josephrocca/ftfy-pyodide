@@ -1,4 +1,3 @@
-# ftfy-pyodide
 A quick JavaScript port of [Python's ftfy module](https://pypi.org/project/ftfy/) using Pyodide.
 
 ```html
