@@ -1,10 +1,8 @@
 A quick JavaScript "port" of Python's [ftfy](https://pypi.org/project/ftfy/) ("fixes text for you") using [Pyodide](https://github.com/pyodide/pyodide). It fixes text encoding issues (mojibake). For example, it converts `â€™` back into `'`. You can use it like this:
 
-```html
-<script type=module>
-  import ftfy from "https://deno.land/x/ftfy_pyodide@v0.1.1/mod.js";
-  ftfy.fix_text("(à¸‡'âŒ£')à¸‡"); // (ง'⌣')ง
-</script>
+```js
+import ftfy from "https://deno.land/x/ftfy_pyodide@v0.1.1/mod.js";
+ftfy.fix_text("(à¸‡'âŒ£')à¸‡"); // (ง'⌣')ง
 ```
 
 If you want it to be available as a global variable (like an old-school script tag import), use this code:
