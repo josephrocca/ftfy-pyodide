@@ -2,7 +2,12 @@ A quick JavaScript "port" of version 6.0 of Python's [ftfy](https://pypi.org/pro
 
 ```js
 import ftfy from "https://deno.land/x/ftfy_pyodide@v0.1.1/mod.js";
-ftfy.fix_text("(à¸‡'âŒ£')à¸‡"); // (ง'⌣')ง
+ftfy.fix_text("(à¸‡'âŒ£')à¸‡") // (ง'⌣')ง
+```
+or this:
+```js
+let ftfy = await import("https://deno.land/x/ftfy_pyodide@v0.1.1/mod.js").then(m => m.default);
+ftfy.fix_text("letâ€™s go") // let's go
 ```
 
 If you want it to be available as a global variable (like an old-school script tag import), use this code:
