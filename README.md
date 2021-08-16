@@ -26,7 +26,7 @@ It doesn't run yet in Deno due to `pyodide.js` assuming that the runtime is eith
 
 `ftfy` was created by Robyn Speer at [Luminoso Technologies, Inc.](LuminosoInsight) and is MIT licensed. It depends upon [wcwidth](https://github.com/jquast/wcwidth) (by [Jeff Quast](https://github.com/jquast)) which is also MIT licensed. [Pyodide](https://github.com/pyodide/pyodide) is licensed under [Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/). **All credit for this module goes to Robyn Speer, Jeff Quast and the Pyodide contributors**. I just wrote a few lines of code to wrap it into a JS module.
 
-## As stated by the `ftfy` docs:
+## As stated by the Python `ftfy` docs:
 
 ftfy can fix mojibake (encoding mix-ups), by detecting patterns of characters that were clearly meant to be UTF-8 but were decoded as something else:
 
